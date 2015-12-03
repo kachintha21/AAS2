@@ -1,0 +1,698 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no maximum-scale=1.0">
+    <meta name="description" content="Layout for DLP module">
+    <meta name="author" content="TMSGR Warnasooriya">
+
+    <title>AAS Call Center</title>
+
+    <!-- Boostrap CSS files -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="includes/themes/default/style.css" rel="stylesheet">
+
+    <!-- Layout CSS files -->
+    <link href="css/dlp_layout.css" rel="stylesheet">
+    <link href="css/form_style.css" rel="stylesheet">
+
+    <!-- Validation engine CSS files -->
+    <link href="css/validationEngine.jquery.css" rel="stylesheet">
+
+    <!-- Pace CSS files -->
+    <link href="css/dataurl.css" rel="stylesheet">
+
+    <!-- JQuery UI CSS files -->
+    <link href="css/jquery-ui.css" rel="stylesheet">
+
+    <!-- Data Table CSS -->
+    <link href="css/data_table.css" rel="stylesheet">
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- Sweet Alert CSS files -->
+    <link href="css/sweetalert.css" rel="stylesheet">
+
+    <!-- Chosen CSS files -->
+    <link href="css/chosen.css" rel="stylesheet">
+
+    <!-- JQuery Library -->
+    <script src="includes/js/jquery-2.0.3.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="includes/js/jquery-2.0.3.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="includes/js/default.js"></script>
+
+    <!-- reports related CSS -->
+    <link href="css/report/report.css" rel="stylesheet" />
+
+    <!-- Graphs related scripts -->
+    <script src="includes/js/reports/highcharts.js"></script>
+    <script src="includes/js/reports/exporting.js"></script>
+    <script src="includes/js/reports/highcharts-3d.js"></script>
+    <script src="includes/js/reports/report-charts.js"></script>
+    <script src="includes/js/jquery.cycle2.js"></script>
+
+    <!-- Layout JavaScript -->
+    <script src="includes/js/layout.js"></script>
+
+    <!-- Validation engine related JavaScript library -->
+    <script defer src="includes/js/jquery.validationEngine-en.js" charset="utf-8"></script>
+    <script defer src="includes/js/jquery.validationEngine.js" charset="utf-8"></script>
+
+    <!-- Pace JavaScript Lilbrary -->
+    <script src="includes/js/pace.min.js"></script>
+
+    <!-- Chosen JavaScript Library -->
+    <script src="includes/js/chosen.jquery.min.js"></script>
+
+    <!-- Sweet Alert related javascript files -->
+    <script src="includes/js/sweetalert.min.js"></script>
+
+    <!-- Custom Java Script Files -->
+    <script src="includes/js/mydate.js"></script>
+    <script src="includes/js/mydatetime.js"></script>
+    <script src="includes/js/myform.js"></script>
+
+    <!-- Date picker JavaScript -->
+    <script src="includes/js/jquery-ui.js"></script>
+
+    <!-- Layout JavaScript -->
+    <script src="includes/js/jquery.dataTables.min.js"></script>
+    <script src="includes/js/dataTables.bootstrap.js"></script>
+    <style>
+        tr {
+            height: 25px;
+        }
+
+        .topic {
+            font-family: calibri;
+        }
+
+        table {
+            max-height: 80vh;
+            overflow: hidden;
+        }
+
+        #unack-alarms_wrapper {
+            height: 512px;
+            overflow-y: scroll;
+        }
+
+        #pen-alarms_wrapper {
+            height: 512px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h4 class="navbar-brand">AAS Call Center<span class="strap"></span></h4>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/ticket/view-ticket">View</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/systems">Systems</a></li>
+                    <li><a href="/azbil groups">Azbil Groups</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul id="sidemenu" class="sidemenu hidden-xs" style="height: 667px;">
+        <li></li>
+        <li><a href="/"><i class="icon-home icon-2x"></i><br>Home</a></li>
+        <li><a href="/ticket/view-ticket"><i class="icon-bell-alt icon-2x"></i><br>Alarms</a></li>
+        <li><a href="ManualAlarms.html"><i class="icon-bell icon-2x"></i><br>Manual Alarms</a></li>
+        <li>
+            <a href="#"><i class="icon-gear icon-2x"></i><br>Settings</a>
+            <ul class="sidemenu hidden-xs sub-menu" style="height: 667px;">
+                <li style="margin-top: 181.5px;"><a href="Block.html"><i class="icon-list icon-2x"></i><br>Blocks</a></li>
+                <li><a href="Unit.html"><i class="icon-sitemap icon-2x"></i><br>Units</a></li>
+                <li><a href="Residance.html"><i class="icon-user icon-2x"></i><br>Residance</a></li>
+                <li><a href="Contractor.html"><i class="icon-user icon-2x"></i><br>Contractors</a></li>
+                <li><a href="SAC.html"><i class="icon-user icon-2x"></i><br>SAC</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="icon-user icon-2x"></i><br>Manage Users</a>
+            <ul class="sidemenu hidden-xs sub-menu" style="height: 667px;">
+                <li style="margin-top: 181.5px;"><a href="Users.html"><i class="icon-user icon-2x"></i><br>Users</a></li>
+                <li><a href="/configurations/my-account"><i class="icon-user icon-2x"></i><br>My Account</a></li>
+            </ul>
+        </li>
+        <li><a href="Reports.html"><i class="icon-file icon-2x"></i><br>Reports</a></li>
+    </ul>
+    <div class="content-area" style="hieght:100%">
+        <div class="page-header" id="page-header">
+            <div class="container">
+                <h4>
+                    AAS Call Center
+                    <small class="pull-right hidden-xs">
+                        <a href="/">Home</a> >
+                        <a class="active" href="">Alarms</a>
+                    </small>
+                </h4>
+                <small class="visible-xs">
+                    <a href="/">Home</a> >
+                    <a class="active" href="">AAS Call Center</a>
+                </small>
+            </div>
+        </div>
+        <div class="container" id="page-container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <p class="text-center topic">Unacknowledged Alarms</p>
+                    <hr />
+                    <table style="width:100%" id="unack-alarms">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Block/Unit</th>
+                                <th>Patient</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>2015-11-27 17:53</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:54</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:55</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:56</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:57</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:56</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:58</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:58</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:58</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:42</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:59</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <p class="text-center topic">Pending Alarms</p>
+                    <hr />
+                    <table style="width:100%" id="pen-alarms">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Block/Unit</th>
+                                <th>Patient</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                        <tr>
+                            <td>2015-11-27 17:52</td>
+                            <td>682B #01-28</td>
+                            <td>Peter Chan</td>
+                            <td>Shelter Alarms SetTrigger</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container"></div>
+    <div id="footer-bottom" style="100px"></div>
+    </div>
+    <div id="alarm-desc" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
+                    <form role="form">
+                        <div class="row">
+						
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+							<p class="text-center topic">Alarm Info</p>
+							<hr>
+                                <div class="form-group">
+                                    <label for="name">Block/Unit:</label>
+                                    <p type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Description:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Time:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+
+                            </div>
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+							<p class="text-center topic">Residance Info</p>
+							<hr>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Age:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Home Tp:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Mobile:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+
+                            </div>
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="name">Next of Kin Name:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Address:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Home Tp:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Mobile:</label>
+                                    <input type="name" class="form-control" id="name">
+                                </div>
+
+                            </div>
+							</div>
+                        </div>
+
+
+                        <div class="row">
+							<hr />
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label><input type="radio" name="optradio1">Emergancy</label>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Fall/inquery in Bath</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Fall/inquery in hall</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Fall/inquery in room</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Fall/Injury (pendant)</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Sick/Health problem</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Fire outside unit</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Fire inside unit</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Gas leaked</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Loss of life</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Others (Assistance / Presence : Police, Paramedics, Reporter)</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label><input type="radio" name="optradio1">Non-Emergancy</label>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">False alarm</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">System fault</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Replace batteries</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Maintain/Test</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Others (Can specify)</label>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <button type="save" class="btn btn-default pull-right">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cover">&nbsp;</div>
+    <script>
+        var unack_alarms = $('#unack-alarms').dataTable({
+            bFilter: true,
+            bInfo: false,
+            bLengthChange: false,
+            bPaginate: false
+        });
+
+        $('#pen-alarms').dataTable({
+            bFilter: true,
+            bInfo: false,
+            bLengthChange: false,
+            bPaginate: false
+        });
+
+        $('#unack-alarms tbody').on('click', 'tr', function () {
+            $('#alarm-desc').modal('show');
+        });
+
+        
+
+        $('#unack-alarms').wrap("<div class='table=wrapper'></div>");
+        $('#pen-alarms').wrap("<div class='table=wrapper'></div>");
+    </script>
+</body>
+</html>
